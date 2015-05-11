@@ -338,6 +338,10 @@ class jigoshop_product extends Jigoshop_Base {
 	public function get_title() {
 		return apply_filters('jigoshop_product_title', get_the_title($this->ID), $this);
 	}
+	
+	public function get_link_add_to_cart() {
+		return "&lt;a data-toggle='modal' data-target='#myModal".$this->id."'  style='margin-left: 5px;' rel='nofollow' &gt;Dodaj ".the_title()." u korpu&lt;/a&gt;";
+	}
 
 	/**
 	 * Get the link to the product
@@ -934,7 +938,7 @@ class jigoshop_product extends Jigoshop_Base {
 			$html = __( 'Free', 'jigoshop' );
 
 		if ( $this->regular_price == '' )
-			$html = __( 'Price Not Announced', 'jigoshop' );
+			$html = __( 'U restoranu', 'jigoshop' );
 
         return apply_filters('jigoshop_product_get_price_html', $html, $this, $this->regular_price);
     }

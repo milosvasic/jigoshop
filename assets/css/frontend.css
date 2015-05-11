@@ -384,15 +384,19 @@ span.onsale {
 }
 
 .products {
-	clear: both
+	clear: both;
+
 }
 
+#page_content_wrapper > div > div > div > ul.products {
+width:800px;
+}
 .products li {
 	float: left;
 	margin: 0 10px 20px 0;
 	padding: 0 !important;
 	position: relative;
-	width: 110px
+	width: auto;
 }
 
 .products li .onsale {
@@ -406,9 +410,19 @@ span.onsale {
 	text-decoration: none
 }
 
+#fancybox-overlay {
+z-index: 999 !important;}
+
+#fancybox-wrap {
+z-index: 1000 !important;}
+}
+
+.modal-content {
+z-index:9999;}
+
 .products li img {
-	width: 96px !important;
-	height: 66px !important;
+	width: 316px !important;
+	height: 200px !important;
 	display: block;
 	margin: 0 0 8px !important;
 	border: 1px solid #dddddd

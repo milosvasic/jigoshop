@@ -134,7 +134,7 @@ if (!function_exists('jigoshop_template_loop_add_to_cart')) {
 					$output = '';
 				}
 			} else if ( $button_type == 'add' ) {
-				$output = '<a data-toggle="modal" data-target="#myModal'.$_product->id.'" class="button" rel="nofollow">'.__('Add to cart', 'jigoshop').'</a><div id="myModal'.$_product->id.'" class="modal fade">
+				$output = '<a data-toggle="modal" data-target="#myModal'.$_product->id.'" class="button" rel="nofollow">'.translate_text('Dodaj u korpu', 'jigoshop', ICL_LANGUAGE_CODE).'</a><div id="myModal'.$_product->id.'" class="modal fade">
     <div class="modal-dialog">
 	<form  method="post" action="'.esc_url($_product->add_to_cart_url()).'">
         <div class="modal-content">
@@ -211,9 +211,16 @@ if (!function_exists('jigoshop_template_loop_price')) {
 
 if (!function_exists('jigoshop_product_image')){
 	function jigoshop_product_image( $post, $_product ) {
-	?><a href="<?php echo $_product->get_brand(); ?>" rel="gallery" title="<?php echo the_title() ?>"><img alt="" class="frame img_nofade" src="<?php echo $_product->get_tgin(); ?>" style="opacity:1;" /> </a> <?php
+	if ( has_post_thumbnail() ) {
+	
+	
+	?><a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" rel="gallery" title="<?php echo $_product->get_link_add_to_cart() ?>"><img alt="" class="frame img_nofade" src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID, 'large') )[0]; ?>" style="opacity:1;" /> </a> <?php
 	}
+	else { echo '<img src="..\wp-content\plugins\jigoshop\assets\images\placeholder.png" href="google.com" alt="No photo" width="316" height="200"></img>'; }
+	}
+	
 }
+			
 if ( ! function_exists( 'jigoshop_cart_has_post_thumbnail' ) ) {
 	/**
 	 * Check if product in cart has an image attached. Applies `jigoshop_cart_has_post_thumbnail` filter.
@@ -255,6 +262,8 @@ if (!function_exists('jigoshop_show_product_images')) {
 }
 if (!function_exists('jigoshop_show_product_thumbnails')) {
 	function jigoshop_show_product_thumbnails() {
+	
+
 
 		global $_product, $post;
 
