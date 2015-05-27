@@ -34,7 +34,7 @@ if ( have_posts()) : while ( have_posts() ) : the_post(); $_product = new jigosh
 
 	?>
 	<li class="product">
-		<?php do_action('jigoshop_before_shop_loop_item'); ?><a href="<?php the_permalink(); ?>"></a><strong style="color:rgb(252, 214, 98) !important;height:20px;font-size:11.5px;"><?php the_title(); ?></strong></br><?php do_action('jigoshop_after_shop_loop_item_title', $post, $_product); ?>
+		<?php do_action('jigoshop_before_shop_loop_item'); ?><a href="<?php the_permalink(); ?>"></a><strong style="color:rgb(252, 214, 98) !important;height:20px;font-size:16px;"><?php the_title(); ?></strong></br><?php do_action('jigoshop_after_shop_loop_item_title', $post, $_product); ?>
 		<?php do_action('jigoshop_product_image', $post, $_product);?>
 		<?php do_action('jigoshop_after_shop_loop_item', $post, $_product); ?></li><?php
 

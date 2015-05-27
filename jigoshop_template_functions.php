@@ -134,7 +134,7 @@ if (!function_exists('jigoshop_template_loop_add_to_cart')) {
 					$output = '';
 				}
 			} else if ( $button_type == 'add' ) {
-				$output = '<a data-toggle="modal" data-target="#myModal'.$_product->id.'" class="button" rel="nofollow">'.translate_text('Dodaj u korpu', 'jigoshop', ICL_LANGUAGE_CODE).'</a><div id="myModal'.$_product->id.'" class="modal fade">
+				$output = '<a data-toggle="modal" data-target="#myModal'.$_product->id.'" class="button" rel="nofollow">Dodaj u korpu</a><div id="myModal'.$_product->id.'" class="modal fade">
     <div class="modal-dialog">
 	<form  method="post" action="'.esc_url($_product->add_to_cart_url()).'">
         <div class="modal-content">
@@ -145,7 +145,7 @@ if (!function_exists('jigoshop_template_loop_add_to_cart')) {
             <div class="modal-body">
 			
 			
-			<h4>'.translate_text('Količina','Количина:', ICL_LANGUAGE_CODE).' <select name="inputQuantity" id="inputQuantity" style="width:5em;">
+			<h4>Količina<select name="inputQuantity" id="inputQuantity" style="width:5em;">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -157,7 +157,7 @@ if (!function_exists('jigoshop_template_loop_add_to_cart')) {
 			<option value="9">9</option>
 			</select></h4>
 
-<div id="optr_87007_4292 " class=""><hr><h4>'.translate_text('Izbor hleba','Избор хлеба', ICL_LANGUAGE_CODE).'</h4>
+<div id="optr_87007_4292 " class=""><hr><h4>Izbor hleba</h4>
 
 <div class="masonery">
 <div><label><input type="radio" checked="" id="somun" name="bread" value="Somun"> '.translate_text('Somun','Сомун:', ICL_LANGUAGE_CODE).' <span class="muted"></span></label></div><div><label><input type="radio" id="lepinja" name="bread" value="Lepinja"> '.translate_text('Lepinja','Лепиња', ICL_LANGUAGE_CODE).' <span class="muted"></span></label></div><div><label><input type="radio" id="tortilja" name="bread" value="Tortilja"> '.translate_text('Tortilja','Тортиља', ICL_LANGUAGE_CODE).' <span class="muted"></span></label></div></div>
